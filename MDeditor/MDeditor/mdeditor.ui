@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MDeditor</class>
+ <widget class="QMainWindow" name="MDeditor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>686</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MDeditor</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../build-MDeditor-Desktop_Qt_5_14_2_GCC_64bit-Debug/qmake_qmake_immediate.qrc">
+    <normaloff>:/resources/icons/markdown.png</normaloff>:/resources/icons/markdown.png</iconset>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTextEdit" name="textEdit"/>
+    </item>
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QWebEngineView" name="preview" native="true"/>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1080</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSaveas"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>编辑</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuTool">
+    <property name="title">
+     <string>工具</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="actionContact"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuTool"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_cnnct"/>
+   <addaction name="separator"/>
+   <addaction name="actionMySQL"/>
+   <addaction name="separator"/>
+   <addaction name="action_pdf"/>
+   <addaction name="separator"/>
+   <addaction name="actionH1"/>
+   <addaction name="separator"/>
+   <addaction name="actionH2"/>
+   <addaction name="separator"/>
+   <addaction name="actionB"/>
+   <addaction name="separator"/>
+   <addaction name="actionI"/>
+   <addaction name="separator"/>
+   <addaction name="actionDownline"/>
+   <addaction name="separator"/>
+   <addaction name="actionDelete"/>
+   <addaction name="separator"/>
+   <addaction name="actionLink"/>
+   <addaction name="separator"/>
+   <addaction name="actionCode"/>
+   <addaction name="separator"/>
+   <addaction name="actionPic"/>
+   <addaction name="separator"/>
+   <addaction name="actionRefer"/>
+   <addaction name="separator"/>
+   <addaction name="actionLine"/>
+   <addaction name="separator"/>
+   <addaction name="actionTex"/>
+   <addaction name="separator"/>
+   <addaction name="actionList"/>
+   <addaction name="separator"/>
+   <addaction name="actionNumList"/>
+  </widget>
+  <action name="actionNew">
+   <property name="text">
+    <string>新建</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="text">
+    <string>打开</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>保存</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionSaveas">
+   <property name="text">
+    <string>另存为</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+S</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>退出</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="actionB">
+   <property name="icon">
+    <iconset resource="../build-MDeditor-Desktop_Qt_5_14_2_GCC_64bit-Debug/qmake_qmake_immediate.qrc">
+     <normaloff>:/resources/icons/粗体.png</normaloff>:/resources/icons/粗体.png</iconset>
+   </property>
+   <property name="text">
+    <string>B</string>
+   </property>
+   <property name="toolTip">
+    <string>加粗</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="actionI">
+   <property name="icon">
+    <iconset resource="../build-MDeditor-Desktop_Qt_5_14_2_GCC_64bit-Debug/qmake_qmake_immediate.qrc">
+     <normaloff>:/resources/icons/斜体.png</normaloff>:/resources/icons/斜体.png</iconset>
+   </property>
+   <property name="text">
+    <string>I</string>
+   </property>
+   <property name="toolTip">
+    <string>斜体</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionDownline">
+   <property name="icon">
+    <iconset resource="../build-MDeditor-Desktop_Qt_5_14_2_GCC_64bit-Debug/qmake_qmake_immediate.qrc">
+     <normaloff>:/resources/icons/下划线.png</normaloff>:/resources/icons/下划线.png</iconset>
+   </property>
+   <property name="text">
+    <string>下划线</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="icon">
+    <iconset resource="../build-MDeditor-Desktop_Qt_5_14_2_GCC_64bit-Debug/qmake_qmake_immediate.qrc">
+     <normaloff>:/resources/icons/删除线.png</normaloff>:/resources/icons/删除线.png</iconset>
+   </property>
+   <property name="text">
+    <string>删除线</string>
+   </property>
+  </action>
+  <action name="actionLink">
+   <property name="icon">
+    <iconset resource="../build-MDeditor-Desktop_Qt_5_14_2_GCC_64bit-Debug/qmake_qmake_immediate.qrc">
+     <normaloff>:/resources/icons/链接.png</normaloff>:/resources/icons/链接.png</iconset>
+   </property>
+   <property name="text">
+    <string>链接</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionCode">
+   <property name="icon">
+    <iconset resource="../build-MDeditor-Desktop_Qt_5_14_2_GCC_64bit-Debug/qmake_qmake_immediate.qrc">
+     <normaloff>:/resources/icons/代码.png</normaloff>:/resources/icons/代码.png</iconset>
+   </property>
+   <property name="text">
+    <string>代码</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+K</string>
+   </property>
+  </action>
+  <action name="actionPic">
+   <property name="icon">
+    <iconset resource="../build-MDeditor-Desktop_Qt_5_14_2_GCC_64bit-Debug/qmake_qmake_immediate.qrc">
+     <normaloff>:/resources/icons/图片.png</normaloff>:/resources/icons/图片.png</iconset>
+   </property>
+   <property name="text">
+    <string>图片</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionH1">
+   <property name="text">
+    <string>H1</string>
+   </property>
+   <property name="toolTip">
+    <string>标题1</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
+  </action>
+  <action name="actionH2">
+   <property name="text">
+    <string>H2</string>
+   </property>
+   <property name="toolTip">
+    <string>标题2</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+H</string>
+   </property>
+  </action>
+  <action name="actionContact">
+   <property name="text">
+    <string>联系作者</string>
+   </property>
+  </action>
+  <action name="actionRefer">
+   <property name="icon">
+    <iconset resource="../build-MDeditor-Desktop_Qt_5_14_2_GCC_64bit-Debug/qmake_qmake_immediate.qrc">
+     <normaloff>:/resources/icons/引用.png</normaloff>:/resources/icons/引用.png</iconset>
+   </property>
+   <property name="text">
+    <string>引用</string>
+   </property>
+  </action>
+  <action name="actionList">
+   <property name="icon">
+    <iconset resource="../build-MDeditor-Desktop_Qt_5_14_2_GCC_64bit-Debug/qmake_qmake_immediate.qrc">
+     <normaloff>:/resources/icons/列表.png</normaloff>:/resources/icons/列表.png</iconset>
+   </property>
+   <property name="text">
+    <string>无序列表</string>
+   </property>
+  </action>
+  <action name="actionNumList">
+   <property name="icon">
+    <iconset resource="../build-MDeditor-Desktop_Qt_5_14_2_GCC_64bit-Debug/qmake_qmake_immediate.qrc">
+     <normaloff>:/resources/icons/有序列表.png</normaloff>:/resources/icons/有序列表.png</iconset>
+   </property>
+   <property name="text">
+    <string>有序列表</string>
+   </property>
+  </action>
+  <action name="action_pdf">
+   <property name="icon">
+    <iconset resource="../build-MDeditor-Desktop_Qt_5_14_2_GCC_64bit-Debug/qmake_qmake_immediate.qrc">
+     <normaloff>:/resources/icons/pdf.gif</normaloff>:/resources/icons/pdf.gif</iconset>
+   </property>
+   <property name="text">
+    <string>查看pdf</string>
+   </property>
+   <property name="toolTip">
+    <string>查看pdf</string>
+   </property>
+  </action>
+  <action name="actionLine">
+   <property name="icon">
+    <iconset resource="../build-MDeditor-Desktop_Qt_5_14_2_GCC_64bit-Debug/qmake_qmake_immediate.qrc">
+     <normaloff>:/resources/icons/横线.png</normaloff>:/resources/icons/横线.png</iconset>
+   </property>
+   <property name="text">
+    <string>横线</string>
+   </property>
+  </action>
+  <action name="action_cnnct">
+   <property name="icon">
+    <iconset resource="../build-MDeditor-Desktop_Qt_5_14_2_GCC_64bit-Debug/qmake_qmake_immediate.qrc">
+     <normaloff>:/resources/icons/Server.png</normaloff>:/resources/icons/Server.png</iconset>
+   </property>
+   <property name="text">
+    <string>连接/断开</string>
+   </property>
+  </action>
+  <action name="actionMySQL">
+   <property name="icon">
+    <iconset resource="../build-MDeditor-Desktop_Qt_5_14_2_GCC_64bit-Debug/qmake_qmake_immediate.qrc">
+     <normaloff>:/resources/icons/数据库.png</normaloff>:/resources/icons/数据库.png</iconset>
+   </property>
+   <property name="text">
+    <string>云端文件</string>
+   </property>
+  </action>
+  <action name="actionTex">
+   <property name="icon">
+    <iconset resource="../build-MDeditor-Desktop_Qt_5_14_2_GCC_64bit-Debug/qmake_qmake_immediate.qrc">
+     <normaloff>:/resources/icons/数学公式.png</normaloff>:/resources/icons/数学公式.png</iconset>
+   </property>
+   <property name="text">
+    <string>数学公式</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QWebEngineView</class>
+   <extends>QWidget</extends>
+   <header>qwebengineview.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../build-MDeditor-Desktop_Qt_5_14_2_GCC_64bit-Debug/qmake_qmake_immediate.qrc"/>
+ </resources>
+ <connections/>
+</ui>
