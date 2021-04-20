@@ -1,2 +1,2 @@
 # MarkdownEditor
- A markdown editor create by Qt C++
+ A markdown editor created by Qt C++
